@@ -20,14 +20,6 @@
     )
   )
 )
-					;задавание W17				     
-					;(if (> verticalgrad 45) (setq W17
-					;	    (Degrees->Radians (+ verticalgrad (/ verticalmin 60) (/ verticalsec 3600)))
-					;     )
-					;(setq W17 (Degrees->Radians (- 90 (+ (abs verticalgrad) (abs (/ verticalmin 60)) (abs (/ verticalsec 3600)))))))
-					;Задавание R17
-					;(setq R17 (- (* rastoi2 (sin W17)) (/ (expt (* rastoi2 (sin W17)) 2) (expt 10 10))))
-
 
 (defun C:r45loadpoints ()
   (setvar "CMDECHO" 0)
@@ -51,7 +43,7 @@
   (command "_circle" priborpoi "0.2" "")
   (setq ofi (open fname "r"))
 					;Читание файла
-					;Цикл построчного считывания 
+					;Цикл построчного данных
   (while
     (setq nli (read-line ofi))
      (setq numpic2 (fix (atof (substr nli 28 4))))
@@ -62,7 +54,6 @@
      (if (/= "" (substr nli 81 5))
        (setq podvesh (atof (substr nli 81 5)))
      )
-
 					;Если строрка пустая 
      (if (= (substr nli 43 8) "        ")
        (progn
