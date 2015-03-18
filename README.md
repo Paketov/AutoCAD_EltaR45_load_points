@@ -1,0 +1,1 @@
+# AutoCAD_EltaR45_load_points
